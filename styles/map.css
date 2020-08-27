@@ -1,0 +1,115 @@
+/* Leaflet Boilerplate Map Styles */
+html,
+body {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.65;
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.15;
+}
+h1 {
+	font-weight: 600;
+	margin-top: 0;
+	font-size: 4.209em;
+}
+h2 {font-size: 3.157em;}
+
+h3 {font-size: 2.369em;}
+
+h4 {font-size: 1.777em;}
+
+h5 {font-size: 1.333em;}
+p,
+ul li,
+ol li,
+a {
+	font-size: 0.9em;
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+}
+header.main-header {
+	height: auto;
+	padding: 12px;
+}
+/* Card //--------------------------------------------------------------------------- */
+
+nav.navbar-map {
+	background: #444444;
+	color: #FFFFFF;
+}
+
+/* Legend //--------------------------------------------------------------------------- */
+#leaflet-map .leaflet-bottom {
+    bottom: 80px;
+    left: 20px;
+}
+.legend {
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+.legend i.legend-icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+/* Map //--------------------------------------------------------------------------- */
+.mapcontainer {
+	position: relative;
+}
+.map-panel .map {
+	position: relative;
+	height: 450px;
+	outline: none;
+}
+span.current-county {
+	display: block;
+	position: absolute;
+	top:10px;
+	left: 50px;
+	z-index: 1000;
+	background: #FFFFFF;
+	padding: 8px;
+}
+
+/* Search Controll Override */
+.leaflet-control-search .search-button {
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    background: url(vendor/images/search-icon.png) no-repeat 2px 2px #fff;
+    border-radius: 4px;
+}
+.leaflet-control-search .search-input {
+    display: block;
+    float: left;
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 2px;
+    height: 25px;
+    padding: 0 20px 0 2px;
+    margin: 4px 0 4px 4px;
+}
