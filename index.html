@@ -4,7 +4,7 @@
 		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
-		<title>Leaflet Starter</title>
+		<title>Leaflet Testing Dashboard</title>
 		
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -32,6 +32,8 @@
 		<script type="text/javascript" src="js/vendor/leaflet/leaflet.groupedlayercontrol.js"></script>
 		<script type="text/javascript" src="js/vendor/leaflet/leaflet-search.src.js"></script>
 		<script type="text/javascript" src="js/vendor/leaflet/leaflet.wmslegend.js"></script>
+		<script type="text/javascript" src="js/vendor/leaflet/leaflet-layerjson.js"></script>
+
 
 		<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
 	
@@ -59,6 +61,7 @@
 	<script src="js/map-services.js"></script>
 	<script src="js/main.js"></script>
 
+
 	<script type="text/javascript">
 		$.ajaxSetup({beforeSend: function(xhr) {
 			if (xhr.overrideMimeType) {
@@ -66,7 +69,6 @@
 				}
 			}
 		});
-		
 		var CartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 			subdomains: 'abcd',
@@ -87,6 +89,43 @@
             position: 'topleft'
         });
 	    
+	    var amphibiansLayer;
+	    var amphibiansData;
+	    var amphibianStyle = { 
+			color: '#6baed6', 
+			opacity: 1, 
+			fillOpacity: 0, 
+			weight: 2 
+		};
+		function onEachFeature_Amphibians(feature, layer) {
+		    if (feature.properties) {
+		    	layer.bindPopup(feature.properties.binomial);
+		    }
+		}
+		$.ajax({
+			async: false,
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+			url:"https://data.naturalsciences.org/api/v1/iucn/amphibians",
+			success: function (data) {
+				console.log(data);
+            	createAmphibiansMap(data);
+			},
+			error: function (xhr) {
+				alert(xhr.statusText)
+			}
+		});
+		
+		function createAmphibiansMap(data) {     
+		    amphibiansLayer = new L.geoJSON(data, {
+				style: amphibianStyle,
+				onEachFeature: onEachFeature_Amphibians
+			}).addTo(map);
+
+		};
+		
+			
 		
         var baseMaps = {        	
         	'CartoDB': CartoDB,
@@ -97,6 +136,7 @@
 			'Historical Topographic Maps':  topoLayer,
         };
 		var overlays = {
+			"IUCN Amphibians": amphibiansLayer,
 			'Monthly Temperature Outlook (esri)': monthlyTempOutlook,
 			'Monthly Temperature Outlook (wms)': monthlyTempOutlookWMS
 		}
