@@ -53,7 +53,7 @@
 	<script src="https://code.jquery.com/jquery-migrate-3.3.1.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 	
-	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
 	
 	<script type="text/javascript" src="js/vendor/leaflet/Leaflet.fullscreen.min.js"></script>
 	<script type="text/javascript" src="js/vendor/leaflet/Leaflet.Control.Custom.js"></script>
@@ -102,13 +102,15 @@
 		    	layer.bindPopup(feature.properties.binomial);
 		    }
 		}
+		var url = "https://data.naturalsciences.org/api/v1/spatial/iucn/mammals/binomial?genus=Procyon&species=lotor";
 		$.ajax({
 			async: false,
             type: "GET",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
-			url:"https://data.naturalsciences.org/api/v1/iucn/amphibians",
+			url:url,
 			success: function (data) {
+				console.log("Success");
 				console.log(data);
             	createAmphibiansMap(data);
 			},
