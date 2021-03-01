@@ -4,40 +4,22 @@
 		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
-		<title>Leaflet Testing Dashboard</title>
+		<title>NCMNS Leaflet Starter Template</title>
 		
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 		<link rel="stylesheet prefetch" type="text/css" href="styles/vendor/normalize.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 		
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
 			integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 			crossorigin=""/>
 	    <link rel="stylesheet" type="text/css" href="styles/vendor/leaflet/leaflet.fullscreen.css">
-	    <link rel="stylesheet" type="text/css" href="styles/vendor/leaflet/leaflet-search.min.css">	    
-	    <link rel="stylesheet" type="text/css" href="styles/vendor/leaflet/leaflet-search.min.css">	 
-			
-		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-			integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-			crossorigin=""></script>			
-		<script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
-		    integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
-		    crossorigin=""></script>
-		<script src="https://unpkg.com/leaflet-lasso@2.1.3/dist/leaflet-lasso.umd.min.js"></script>
-		<script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet.ajax.min.js"></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet-providers.js"></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet.groupedlayercontrol.js"></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet-search.src.js"></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet.wmslegend.js"></script>
-		<script type="text/javascript" src="js/vendor/leaflet/leaflet-layerjson.js"></script>
-
-
-		<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-	
 	    <link rel="stylesheet" href="styles/map.css">
+		<style>
+
+		</style>
   </head>
 
   <body>
@@ -47,106 +29,132 @@
 		</header>
 		<div id="map" class="map"></div>
 	</div>
-	
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-migrate-3.3.1.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	
-	<script src="https://d3js.org/d3.v5.min.js"></script>
-	
-	<script type="text/javascript" src="js/vendor/leaflet/Leaflet.fullscreen.min.js"></script>
-	<script type="text/javascript" src="js/vendor/leaflet/Leaflet.Control.Custom.js"></script>
-	
-	<script src="js/map-services.js"></script>
-	<script src="js/main.js"></script>
+	<script src="scripts/vendor/bootstrap/bootstrap.bundle.js"></script>
 
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+	<script src="scripts/vendor/leaflet/leaflet.js"></script>
+	<script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"></script>
+
+	<script src="https://unpkg.com/esri-leaflet-vector@2.0.2/dist/esri-leaflet-vector.js"></script>
+	<script src="https://unpkg.com/esri-leaflet-cluster@2.1.0/dist/esri-leaflet-cluster.js"></script>
+	<script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0/dist/esri-leaflet-heatmap.js"></script>
+	<script src="https://unpkg.com/esri-leaflet-renderers@2.1.2/dist/esri-leaflet-renderers.js"></script>
+
+	<script type="text/javascript" src="scripts/vendor/leaflet/leaflet.ajax.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/leaflet/leaflet-providers.js"></script>
+	<script type="text/javascript" src='https://unpkg.com/@turf/turf/turf.min.js'></script>
+
+	<script type="text/javascript" src="scripts/map-services.js"></script>
+
+	<script data-main="scripts/app" src="scripts/vendor/require.js"></script>
 
 	<script type="text/javascript">
-		$.ajaxSetup({beforeSend: function(xhr) {
-			if (xhr.overrideMimeType) {
-				xhr.overrideMimeType("application/json");
-				}
-			}
-		});
-		var CartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-			subdomains: 'abcd',
-			maxZoom: 19
-		})
 
-		var map = L.map('map', {
-            center: [35.2, -79.58],
-            zoom: 7,
-            zoomControl: false,
-			fullscreenControl: true
-        });
-        var mapScale = L.control.scale({
-            maxWidth: 150,
-            position: 'bottomright'
-        });
-        var mapZoom = L.control.zoom({
-            position: 'topleft'
-        });
-	    
-	    var amphibiansLayer;
-	    var amphibiansData;
-	    var amphibianStyle = { 
-			color: '#6baed6', 
-			opacity: 1, 
-			fillOpacity: 0, 
-			weight: 2 
-		};
-		function onEachFeature_Amphibians(feature, layer) {
-		    if (feature.properties) {
-		    	layer.bindPopup(feature.properties.binomial);
-		    }
-		}
-		var url = "https://data.naturalsciences.org/api/v1/spatial/iucn/mammals/binomial?genus=Procyon&species=lotor";
-		$.ajax({
-			async: false,
-            type: "GET",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-			url:url,
-			success: function (data) {
-				console.log("Success");
-				console.log(data);
-            	createAmphibiansMap(data);
-			},
-			error: function (xhr) {
-				alert(xhr.statusText)
-			}
-		});
-		
-		function createAmphibiansMap(data) {     
-		    amphibiansLayer = new L.geoJSON(data, {
-				style: amphibianStyle,
-				onEachFeature: onEachFeature_Amphibians
+			$.ajaxSetup({
+				beforeSend: function (xhr) {
+					if (xhr.overrideMimeType) {
+						xhr.overrideMimeType("application/json");
+					}
+				}
+			});
+			var CartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+				subdomains: 'abcd',
+				maxZoom: 19
+			})
+
+			var map = L.map('map', {
+				center: [20, 0],
+				zoom: 2.5,
+				zoomSnap: 0.5,
+				zoomDelta: 0.5,
+				zoomControl: false,
+				fullscreenControl: true
+			});
+			map.on('zoomend',function(e) {
+				var currZoom = map.getZoom();
+				console.log(currZoom);
+			});
+			var mapScale = L.control.scale({
+				maxWidth: 150,
+				position: 'bottomright'
+			});
+			var mapZoom = L.control.zoom({
+				position: 'topright'
+			});
+
+
+			L.control.layers({
+				'% Forest Cover 2010': L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png').addTo(map),
+				'Loss/Extent/Gain (Red/Green/Blue)': L.tileLayer('http://earthengine.google.org/static/hansen_2013/loss_forest_gain/{z}/{x}/{y}.png'),
+				'Loss': L.tileLayer('http://earthengine.google.org/static/hansen_2013/loss/{z}/{x}/{y}.png'),
+				'Gain': L.tileLayer('http://earthengine.google.org/static/hansen_2013/gain/{z}/{x}/{y}.png')
+			}, {
+				// empty of checkboxes
 			}).addTo(map);
 
-		};
-		
-			
-		
-        var baseMaps = {        	
-        	'CartoDB': CartoDB,
-			'Anthropogenic Density':  sedacAnthropogenicBiomes2006,
-			'Stamen TonerLite':  Stamen_TonerLite,
-			'OpenStreet Mapnik':  OpenStreetMap_Mapnik,
-			'ESRI World Street Map':  Esri_WorldStreetMap,
-			'Historical Topographic Maps':  topoLayer,
-        };
-		var overlays = {
-			"IUCN Amphibians": amphibiansLayer,
-			'Monthly Temperature Outlook (esri)': monthlyTempOutlook,
-			'Monthly Temperature Outlook (wms)': monthlyTempOutlookWMS
-		}
-		var layersControl = L.control.layers(baseMaps, overlays,{collapsed:false});
-        map.addControl(layersControl);
-        map.addControl(mapZoom);
-        map.addControl(mapScale);
-        CartoDB.addTo(map);
+// USA Geopolitical Boundaries
+			var usaStatesLayer;
+			var usaStatesStyle = {
+				fillOpacity: 0,
+				weight: 2,
+				opacity: 1,
+				color: '#E31A1C',
+				dashArray: '1',
+			};
+
+			function onEachFeature_usaStates(feature, layer) {
+				if (feature.properties) {
+					layer.bindPopup(feature.properties.name);
+				}
+			}
+
+			usaStatesLayer = new L.geoJson.ajax("data/ne_110m_admin_1_states_provinces_shp.geojson", {
+				style: usaStatesStyle,
+				onEachFeature: onEachFeature_usaStates
+			});
+			var feowLayer;
+			var usaStatesStyle = {
+				fillOpacity: 0,
+				weight: 2,
+				opacity: 1,
+				color: '#E31A1C',
+				dashArray: '1',
+			};
+
+			function onEachFeature_usaStates(feature, layer) {
+				if (feature.properties) {
+					layer.bindPopup(feature.properties.name);
+				}
+			}
+
+			usaStatesLayer = new L.geoJson.ajax("data/ne_110m_admin_1_states_provinces_shp.geojson", {
+				style: usaStatesStyle,
+				onEachFeature: onEachFeature_usaStates
+			});
+
+			var baseMaps = {
+				'CartoDB': CartoDB,
+				'Stamen TonerLite': Stamen_TonerLite,
+				'OpenStreet Mapnik': OpenStreetMap_Mapnik,
+				'ESRI World Street Map': Esri_WorldStreetMap,
+				'Historical Topographic Maps': topoLayer,
+			};
+			var overlays = {
+				'FEOW': feowLayer,
+				'USA State Boundaries': usaStatesLayer,
+				'Monthly Temperature Outlook (esri)': monthlyTempOutlook,
+				'Anthropogenic Density': sedacAnthropogenicBiomes2006,
+			};
+			var layersControl = L.control.layers(baseMaps, overlays);
+			map.addControl(layersControl);
+			map.addControl(mapZoom);
+			map.addControl(mapScale);
+			CartoDB.addTo(map);
 	</script>
   </body>
 </html>
